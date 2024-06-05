@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .order-summary {
+            background: white;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .order-summary h2 {
+            margin: 0;
+        }
+        .order-summary p {
+            color: #555;
+        }
+        .order-summary .total {
+            font-size: 1.2em;
+            color: #e67e22;
+            text-align: right;
+        }
+        .order-summary button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            float: right;
+        }
+        .order-summary button:hover {
+            background: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Summary</h1>
+    </header>
+    <div class="container">
+        <div class="order-summary">
+            <h2>Your Order</h2>
+            <p>Pizza Margherita - $10.00</p>
+            <p>Spaghetti Carbonara - $12.00</p>
+            <p class="total">Total: $22.00</p>
+            <button>Checkout</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -34,7 +34,8 @@
         }
         .form-container input[type="text"],
         .form-container input[type="email"],
-        .form-container input[type="password"] {
+        .form-container input[type="password"],
+        .form-container select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -68,8 +69,22 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 
+                <label for="username">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="username">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+                
+                <label for="user-type">User Type:</label>
+                <select id="user-type" name="user-type" required>
+                    <option value="customer">Customer</option>
+                    <option value="delivery-person">Delivery Person</option>
+                    <option value="restaurant">Restaurant Owner</option>
+                </select>
                 
                 <button type="submit">Register</button>
             </form>

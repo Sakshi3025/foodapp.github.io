@@ -3,92 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
+    <title>Registration</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .form-container {
-            background: white;
-            margin: 15px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .form-container h2 {
-            margin: 0 0 15px;
-        }
-        .form-container input[type="text"],
-        .form-container input[type="email"],
-        .form-container input[type="password"],
-        .form-container select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-container button {
-            background: #e67e22;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .form-container button:hover {
-            background: #d35400;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide h2 {
+    margin: 0 0 15px;
+}
+
+.slide form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide form label {
+    margin: 10px 0 5px;
+}
+
+.slide form input {
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.slide form button {
+    padding: 10px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slide form button:hover {
+    background-color: #d35400;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #555;
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>User Registration</h1>
+        <h1>Registration Form</h1>
     </header>
     <div class="container">
-        <div class="form-container">
-            <h2>Create an Account</h2>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="username">Address:</label>
-                <input type="text" id="address" name="address" required>
-
-                <label for="username">Pincode:</label>
-                <input type="text" id="pincode" name="pincode" required>
-
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <label for="user-type">User Type:</label>
-                <select id="user-type" name="user-type" required>
-                    <option value="customer">Customer</option>
-                    <option value="delivery-person">Delivery Person</option>
-                    <option value="restaurant">Restaurant Owner</option>
-                </select>
-                
-                <button type="submit">Register</button>
-            </form>
+        <div class="slider">
+            <div class="slide customer-slide active">
+                <h2>Customer</h2>
+                <form>
+                    <label for="customer-username">Username:</label>
+                    <input type="text" id="customer-username" name="username" required>
+                    <label for="customer-password">Password:</label>
+                    <input type="password" id="customer-password" name="password" required>
+                    <label for="customer-password">Confirm Password:</label>
+                    <input type="password" id="customer-password" name="Confirm password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <div class="slide owner-slide">
+                <h2>Restaurant Owner</h2>
+                <form>
+                    <label for="owner-username">Username:</label>
+                    <input type="text" id="owner-username" name="username" required>
+                    <label for="owner-password">Password:</label>
+                    <input type="password" id="owner-password" name="password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <div class="slide dispatch-slide">
+                <h2>Food Delivery Person</h2>
+                <form>
+                    <label for="dispatch-username">Username:</label>
+                    <input type="text" id="dispatch-username" name="username" required>
+                    <label for="dispatch-password">Password:</label>
+                    <input type="password" id="dispatch-password" name="password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="showSlide('customer')">Customer</button>
+            <button onclick="showSlide('owner')">Restaurant Owner</button>
+            <button onclick="showSlide('dispatch')">Food Delivery Person</button>
         </div>
     </div>
+    <script>
+        function showSlide(slideName) {
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+    document.querySelector(`.${slideName}-slide`).classList.add('active');
+}
+
+    </script>
 </body>
 </html>

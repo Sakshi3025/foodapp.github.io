@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #f49405 3px solid;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .menu,
+    .cart {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .menu h2,
+    .cart h2 {
+      text-align: center;
+    }
+
+    .menu-item {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 5px;
+      margin: 10px;
+      width: 150px;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    button {
+      background:#f49405;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background:#f49405;
+    }
+
+    .cart-total {
+      text-align: right;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      background: #f49405;
+      margin-top: 20px;
+    }
+
+    .checkout-btn:hover {
+      background:#f49405;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    th {
+      background: #f4f4f4;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .menu-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu-item {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+      }
+
+      .cart table,
+      .cart th,
+      .cart td {
+        font-size: 14px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .menu-item {
+        width: 350px;
+        max-width: none;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Food Menu</h1>
+    </header>
+    <main>
+      <section class="menu">
+        <h2>Menu Items</h2>
+        <div class="menu-container">
+          <table>
+            <tr>
+              <td>
+                <div class="menu-item" data-id="1" data-name="Pizza" data-price="12.99">
+                  <img src="https://via.placeholder.com/150" alt="Pizza">
+                  <h3>Pizza</h3>
+                  <p>Price: ₹120.00</p>
+                  <button onclick="addToCart(1, 'Pizza', 120.00)">Add to Cart</button>
+                </div>
+              </td>
+              <td>
+                <div class="menu-item" data-id="2" data-name="Burger" data-price="9.99">
+                  <img src="https://via.placeholder.com/150" alt="Burger">
+                  <h3>Burger</h3>
+                  <p>Price: ₹299.00</p>
+                  <button onclick="addToCart(2, 'Burger', 299.00)">Add to Cart</button>
+                </div>
+              </td>
+              <td>
+                <div class="menu-item" data-id="3" data-name="Pasta" data-price="10.99">
+                  <img src="https://via.placeholder.com/150" alt="Pasta">
+                  <h3>Pasta</h3>
+                  <p>Price: ₹140.00</p>
+                  <button onclick="addToCart(3, 'Pasta', 140.00)">Add to Cart</button>
+                </div>
+                <!-- Add more menu items as needed -->
+        </div>
+        </td>
+        </tr>
+
+        </table>
+      </section>
+      <section class="cart">
+        <h2>Your Cart</h2>
+        <table id="cart">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="cart-total">
+          <strong>Total: $<span id="order-total">0.00</span></strong>
+        </div>
+        <button class="btn checkout-btn" onclick="checkout()">Checkout</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

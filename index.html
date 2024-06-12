@@ -16,7 +16,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: white; 
+      background: white;
       font-size: 15px;
       line-height: 1.5;
     }
@@ -37,33 +37,43 @@
       margin: auto;
       max-height: 100%;
       flex-wrap: wrap;
+      display: flex;
     }
 
     /* Nav */
+
     .main-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 55px;
-      padding: 18px 0;
+      width: 100%;
+      display: inline-flex;
+      height: 60px;
       font-size: 13px;
       position: sticky;
       top: 0px;
       background-color: black;
       color: whitesmoke;
+      flex-wrap: wrap;
+
     }
 
     .main-nav .logo {
       width: 70px;
       height: 55px;
+
+
+      justify-content: left;
     }
 
     .main-nav ul {
+      width: 100%;
+      flex-wrap: wrap;
       display: flex;
     }
 
     .main-nav ul li {
-      padding: 0 10px;
+      padding: 0 5px;
+      width: auto;
+      flex-wrap: wrap;
+      display: flex;
     }
 
     .main-nav ul li a {
@@ -81,7 +91,8 @@
       font-size: 16px;
 
     }
-    .main-nav img{
+
+    .main-nav img {
       height: 20px;
       width: 20px;
     }
@@ -96,47 +107,54 @@
     }
 
     body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .menu-container {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            
-        }
-        .menu-toggle {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 50%;
-        }
-        .menu-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-        }
-        .menu-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .menu-content a:hover {
-            background-color: #ddd;
-        }
-        .menu-content.show {
-            display: block;
-        }
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-/* button */
+    .menu-container {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      margin-left: 0.3rem;
+
+    }
+
+    .menu-toggle {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+    }
+
+    .menu-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu-content a:hover {
+      background-color: #ddd;
+    }
+
+    .menu-content.show {
+      display: block;
+    }
+
+    /* button */
     .btn {
       cursor: pointer;
       display: inline-block;
@@ -162,7 +180,7 @@
       color: #333;
     }
 
-    
+
     .showcase {
       width: 100%;
       height: 750px;
@@ -183,20 +201,25 @@
       margin-bottom: 10px;
     }
 
-   
+
     /* Footer */
     .footer {
-      position: static;
-      background:black;
+
+      background: black;
       color: whitesmoke;
       font-size: 15px;
       padding: 10px 0;
       height: 140px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .footer-inner {
-      max-width: 1100px;
-      padding-left: 34rem;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 18rem;
       display: flex;
       justify-content: space-between;
       color: whitesmoke;
@@ -204,76 +227,114 @@
 
     .footer div {
       margin-bottom: 20px;
-      display: flex; 
+      display: flex;
     }
+
     .footer ul {
       display: flex;
       flex-wrap: wrap;
     }
+
     .footer .footer-inner li a {
       margin-right: 40px;
       margin-bottom: 20px;
       color: whitesmoke;
     }
-.account{
-  font-size: 16px;
-  padding: 8px;
-  color: white;
-  background-color: #f49405;
-  border-radius: 4px;
-  margin-right: 1rem;
-  width: 100px;
-  text-align: center;
-}
-.container{
-  width: 100%;
-}
+
+    .account {
+      font-size: 16px;
+      padding: 8px;
+      height: 38px;
+
+      color: white;
+      background-color: #f49405;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      width: 100px;
+      text-align: center;
+      justify-content: right;
+      margin-top: 8px;
+    }
+
+    .container {
+      width: 100%;
+      flex-wrap: wrap;
+      display: flex;
+    }
 
 
-.dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .img {
-        border-radius: 10px;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f4f4f4;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        right: 0; /* Adjust based on the alignment needed */
-      }
-      .dropdown-content button {
-        background-color: white;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        border: none;
-        width: 100%;
-        text-align: left;
-      }
-      .dropdown-content button:hover {
-        background-color: #ddd;
-      }
-      .registration-button {
-        padding: 10px 10px;
-        background-color: #f49405;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-right: 2rem
-        
-      }
-      .dropdown {
-          margin-top: 3px;
-        }
-      
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
+    .img {
+      border-radius: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f4f4f4;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+      /* Adjust based on the alignment needed */
+    }
+
+    .dropdown-content button {
+      background-color: white;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .dropdown-content button:hover {
+      background-color: #ddd;
+    }
+
+    .registration-button {
+      padding: 10px 5px;
+      background-color: #f49405;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 0rem;
+      justify-content: right;
+      margin-top: 4px;
+
+    }
+
+    .dropdown {
+      margin-top: 3px;
+
+    }
+
+    header {
+      background: black;
+      padding-right: 5px;
+      color: white;
+      text-align: center;
+      width: 100%;
+      position: sticky;
+      display: inline-flex;
+      height: 55px;
+
+    }
+
+    .nav {
+      width: 100%;
+      align-content: center;
+
+    }
+
+    
   </style>
 </head>
 
@@ -284,16 +345,14 @@
   </div>
 
   <div class="container">
-    <!-- Nav -->
-    <nav class="main-nav">
-      <img src="./assets/HDC_logo.jpg"  class="logo" height="20px" width="20px">
-      <ul class="main-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="#">Offers</a></li>
-        
-      </ul>
+    <!-- navigation bar -->
+
+    <header>
+      <img src="./assets/HDC_logo.jpg" class="logo" height="55px" width="65px">
+      <nav class="nav">
+        <h1>KhanaDotCom</h1>
+      </nav>
+      <a href="login.html" class="account">Login</a></li>
       <div class="dropdown">
         <button class="registration-button" onclick="toggleDropdown()">
           Registration
@@ -309,60 +368,63 @@
             Restaurant
           </button>
         </div>
+
       </div>
-      <!-- <a href="register.html" class="account">Register</a></li> -->
-      <a href="login.html" class="account">Login</a></li>
-      <div class="menu-container">
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <div class="menu-content" id="menuContent">
-          <a href="#">Cart</a>  
-          <a href="order.html">Order</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Support</a>
-            <a href="#">Logout</a>
-        </div>
-    </div>
+    </header>
+    <!-- <a href="register.html" class="account">Register</a></li> -->
+    <br><br>
+    <div class="menu-container">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="menu-content" id="menuContent">
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Support</a>
+        <a href="#">Logout</a>
+      </div>
       
-    </nav>
+      
+    </div>
     <!-- Showcase -->
     <header class="showcase">
       <h1>Fresh Food, Fast Delivery!</h1>
       <p>
       <h2>Order Now</h2>
       </p>
-      
+
     </header>
 
-   <br>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      
-      <ul>
-        
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="Terms.html">Terms of use</a></li>
-        <li><a href="#">&copy; KhanaDotCom</a></li>
-      </ul>
-    </div>
-  </footer>
+    <br>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+
+        <ul>
+
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="Terms.html">Terms of use</a></li>
+          <li><a href="#">&copy; KhanaDotCom</a></li>
+        </ul>
+      </div>
+    </footer>
 
 
-  <script>
-    function toggleMenu() {
+    <script>
+      function toggleMenu() {
         var menu = document.getElementById("menuContent");
         menu.classList.toggle("show");
-    }
+      }
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function (event) {
         if (!event.target.matches('.menu-toggle')) {
-            var menu = document.getElementById("menuContent");
-            if (menu.classList.contains('show')) {
-                menu.classList.remove('show');
-            }
+          var menu = document.getElementById("menuContent");
+          if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+          }
         }
-    }
+      }
 
       function toggleDropdown() {
         var dropdown = document.getElementById("dropdown-content");
@@ -384,9 +446,12 @@
           }
         }
       };
-    
-</script>
+      document.getElementById('filter-toggle').addEventListener('click', function () {
+        const filterMenu = document.getElementById('filter-menu');
+        filterMenu.classList.toggle('show');
+      });
+
+    </script>
 </body>
 
 </html>
-

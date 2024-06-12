@@ -101,11 +101,11 @@ function renderCart() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${item.name}</td>
-            <td>$${item.price.toFixed(2)}</td>
+            <td>₹${item.price.toFixed(2)}</td>
             <td>
                 <input type="number" value="${item.quantity}" min="1" onchange="updateCartQuantity(${id}, this.value)">
             </td>
-            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            <td>₹${(item.price * item.quantity).toFixed(2)}</td>
             <td>
                 <button onclick="removeFromCart(${id})">Remove</button>
             </td>

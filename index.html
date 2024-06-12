@@ -333,7 +333,11 @@
       align-content: center;
 
     }
-
+.page{
+  background-color: #f7f4f4;height:100%;width: 100%;
+  color: #0d0c0c;
+  justify-content: space-between
+}
     
   </style>
 </head>
@@ -387,13 +391,45 @@
       
     </div>
     <!-- Showcase -->
-    <header class="showcase">
-      <h1>Fresh Food, Fast Delivery!</h1>
-      <p>
-      <h2>Order Now</h2>
-      </p>
+    <div class="page">
 
-    </header>
+      <h1>Fresh Food, Fast Delivery!</h1>
+    <p>
+      <h2>Order Now</h2>
+    </p>
+    <table>
+      <tr>
+        <td>
+          <div class="menu-item" data-id="1" data-name="Pizza" data-price="12.99">
+            <img src="https://via.placeholder.com/150" alt="Pizza">
+            <h3>Pizza</h3>
+            <p>Price: ₹120.00</p>
+            <button onclick="addToCart(1, 'Pizza', 120.00)">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <div class="menu-item" data-id="2" data-name="Burger" data-price="9.99">
+            <img src="https://via.placeholder.com/150" alt="Burger">
+            <h3>Burger</h3>
+            <p>Price: ₹299.00</p>
+            <button onclick="addToCart(2, 'Burger', 299.00)">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <div class="menu-item" data-id="3" data-name="Pasta" data-price="10.99">
+            <img src="https://via.placeholder.com/150" alt="Pasta">
+            <h3>Pasta</h3>
+            <p>Price: ₹140.00</p>
+            <button onclick="addToCart(3, 'Pasta', 140.00)">Add to Cart</button>
+          </div>
+          <!-- Add more menu items as needed -->
+  </div>
+  </td>
+  </tr>
+
+  </table>
+    </div>
+   
 
     <br>
     <!-- Footer -->

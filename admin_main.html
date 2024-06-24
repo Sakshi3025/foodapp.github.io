@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Sidebar */
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #16a290;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #16a290;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 16px;
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background: #16a290;
+    color: #fff;
+}
+
+/* Page Content */
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 10px;
+    /* background: #fff; */
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .btn {
+    background: #16a290;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.navbar .btn:hover {
+    background: #16a290;
+}
+
+/* Main Content */
+.main-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: #16a290;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    font-size: small;
+   
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 25%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font: 12px sans-serif;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: small;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    text-align: left;
+    font-size: small;
+}
+
+table th {
+    background: #f4f4f4;
+    text-align: left;
+    font-size: small;
+}
+.menu-btn{
+    background-color: #16a290;
+    height: 30px;
+    width: 100px;
+    color: #ddd;
+    border-radius: 5px;
+    font: 14px sans-serif;
+    border-color: #16a290;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Restaurant Admin</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#customers">Customers</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="admin_setting.html">Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left">☰</i>
+                    <span>Hide Sidebar</span>
+                </button>
+            </nav>
+            <div class="main-content">
+                <h2 id="dashboard">Dashboard</h2>
+                <p>Welcome to the admin dashboard!</p>
+            <br>
+            <section id="overview">
+                <h2>Overview</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Orders</h3>
+                        <p>150</p>
+                    </div>
+                    <div class="card">
+                        <h3>Revenue</h3>
+                        <p>₹4200</p>
+                    </div>
+                    <div class="card">
+                        <h3>Customer</h3>
+                        <p>80</p>
+                    </div>
+                    <div class="card">
+                        <h3>Reviews</h3>
+                        <p>45</p>
+                    </div>
+                </div>
+            </section>
+            <section id="orders">
+                <h2>Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Order -->
+                        <tr>
+                            <td1</td>
+                            <td>Riya Sharma</td>
+                            <td>Pizza, Pasta</td>
+                            <td>2</td>
+                            <td>₹225.00</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="menu">
+                <h2>Menu</h2>
+                <button class="menu-btn" onclick="addMenuItem()">Add New Item</button>
+                <div class="menu-list">
+                    <!-- Menu items will be listed here -->
+                </div>
+                <br>
+            </section>
+            <section id="reservations">
+                <h2>Reservations</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Guests</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Reservation -->
+                        <tr>
+                            <td>1</td>
+                            <td>Aryan Singh</td>
+                            <td>2024-07-25</td>
+                            <td>19:00</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    var sidebar = document.getElementById("sidebar");
+    var sidebarCollapse = document.getElementById("sidebarCollapse");
+
+    sidebarCollapse.addEventListener("click", function() {
+        sidebar.classList.toggle("active");
+    });
+});
+function addMenuItem() {
+    const menuList = document.querySelector('.menu-list');
+    const newItem = document.createElement('div');
+    newItem.classList.add('menu-item');
+    newItem.innerHTML = `
+        <h3>New Item</h3>
+        <p>Description of the new item.</p>
+        <p>Price: ₹0.00</p>
+        <button class="menu-btn" onclick="editMenuItem(this)">Edit</button>
+        <button class="menu-btn" onclick="deleteMenuItem(this)">Delete</button>
+    `;
+    menuList.appendChild(newItem);
+}
+
+function editMenuItem(button) {
+    const item = button.parentElement;
+    const newName = prompt('Enter new name:', item.querySelector('h3').textContent);
+    if (newName) {
+        item.querySelector('h3').textContent = newName;
+    }
+}
+
+function deleteMenuItem(button) {
+    const item = button.parentElement;
+    item.remove();
+}
+    </script>
+</body>
+</html>
